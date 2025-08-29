@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh; /* ✅ works on mobile too */
+  height: 100dvh; /* ✅ mobile safe */
   color: #333;
   text-align: center;
   padding: 15px;
@@ -16,21 +16,15 @@ body {
 .container {
   width: 100%;
   max-width: 700px;
-  padding: 25px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 /* 🏷️ Title */
 .title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #fff;
+  color: white;
   margin-bottom: 20px;
-  letter-spacing: 1px;
 }
 
 /* 🔍 Search Box */
@@ -38,8 +32,8 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  flex-wrap: wrap;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .search-box input {
@@ -48,27 +42,26 @@ body {
   max-width: 350px;
   padding: 12px 15px;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   outline: none;
   font-size: 1rem;
-  background: #f9fafb;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .search-box button {
-  padding: 12px 22px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  padding: 12px 20px;
+  background: #4f46e5;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .search-box button:hover {
-  background: linear-gradient(135deg, #3730a3, #5b21b6);
-  transform: scale(1.05);
+  background: #3730a3;
 }
 
 /* ❌ Error Message */
@@ -81,30 +74,24 @@ body {
 /* 🪪 Profile Card */
 .profile-card {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   display: flex;
-  flex-direction: row;
   gap: 20px;
   align-items: center;
   margin: 0 auto;
   max-width: 600px;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  flex-wrap: wrap;
 }
 
 /* 👤 Profile Image */
 .profile-card img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 4px solid #4f46e5;
+  border: 3px solid #4f46e5;
   object-fit: cover;
 }
 
@@ -116,7 +103,7 @@ body {
 }
 
 .bio {
-  margin: 10px 0;
+  margin: 8px 0;
   color: #555;
   font-size: 0.95rem;
   line-height: 1.4;
@@ -125,51 +112,49 @@ body {
 /* 📊 Stats */
 .stats {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .stats span {
   background: #eef2ff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: #4f46e5;
-  box-shadow: 0 2px 5px rgba(99, 102, 241, 0.2);
 }
 
 /* 🔗 Profile Link */
 .profile-link {
   display: inline-block;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  margin-top: 12px;
+  background: #4f46e5;
   color: white;
-  padding: 10px 22px;
-  border-radius: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .profile-link:hover {
-  background: linear-gradient(135deg, #3730a3, #5b21b6);
-  transform: scale(1.05);
+  background: #3730a3;
 }
 
 /* 📌 Footer */
 .footer {
-  margin-top: 30px;
+  margin-top: 20px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   opacity: 0.85;
 }
 
 /* 📱 Mobile Responsiveness */
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .search-box {
@@ -189,7 +174,7 @@ body {
   }
 
   .profile-card img {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .stats {
@@ -199,17 +184,17 @@ body {
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .profile-card img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   .stats span {
     font-size: 0.8rem;
-    padding: 5px 12px;
+    padding: 5px 10px;
   }
 
   .profile-link {
