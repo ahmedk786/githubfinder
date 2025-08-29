@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* important for mobile */
 }
 
 .search-box input {
@@ -42,6 +43,7 @@ body {
 .search-box button {
   padding: 12px 20px;
   margin-left: 10px;
+  margin-top: 10px; /* for mobile stacking */
   background: #4f46e5;
   border: none;
   border-radius: 10px;
@@ -71,6 +73,7 @@ body {
   margin: 0 auto;
   max-width: 600px;
   text-align: left;
+  flex-wrap: wrap; /* mobile adjustment */
 }
 
 .profile-card img {
@@ -94,6 +97,7 @@ body {
   display: flex;
   gap: 15px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .stats span {
@@ -125,3 +129,59 @@ body {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box input {
+    max-width: 100%;
+  }
+
+  .search-box button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-card img {
+    margin-bottom: 15px;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .profile-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stats span {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .profile-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
