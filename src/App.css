@@ -1,203 +1,169 @@
-/* 🌈 Global styles */
+/* Global Styles */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  background: linear-gradient(135deg, #4f46e5, #8b5cf6, #ec4899);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh; /* ✅ mobile safe */
-  color: #333;
-  text-align: center;
+  min-height: 100dvh; /* Fix for mobile vertical centering */
   padding: 15px;
+  box-sizing: border-box;
 }
 
-/* 📦 Container */
 .container {
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   padding: 20px;
+  text-align: center;
 }
 
-/* 🏷️ Title */
+/* Title */
 .title {
   font-size: 2rem;
   font-weight: 800;
-  color: white;
+  color: #4f46e5;
   margin-bottom: 20px;
 }
 
-/* 🔍 Search Box */
+/* Search Box */
 .search-box {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column; /* Stacks nicely on mobile */
   gap: 10px;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .search-box input {
-  flex: 1;
-  min-width: 200px;
-  max-width: 350px;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
   font-size: 1rem;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-box input:focus {
+  border-color: #4f46e5;
+  outline: none;
 }
 
 .search-box button {
-  padding: 12px 20px;
+  padding: 12px;
   background: #4f46e5;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  width: 100%;
 }
 
 .search-box button:hover {
   background: #3730a3;
 }
 
-/* ❌ Error Message */
+/* Error Message */
 .error {
-  color: #f87171;
+  color: #dc2626;
   font-weight: bold;
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
-/* 🪪 Profile Card */
+/* Profile Card */
 .profile-card {
-  background: white;
+  background: #f9fafb;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: left;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
-/* 👤 Profile Image */
 .profile-card img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 3px solid #4f46e5;
-  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-/* 📝 Profile Info */
 .username {
   color: #4f46e5;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.2rem;
 }
 
 .bio {
-  margin: 8px 0;
+  margin: 10px 0;
   color: #555;
   font-size: 0.95rem;
-  line-height: 1.4;
 }
 
-/* 📊 Stats */
+/* Stats Section */
 .stats {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .stats span {
   background: #eef2ff;
-  padding: 6px 12px;
-  border-radius: 12px;
+  padding: 8px 14px;
+  border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #4f46e5;
 }
 
-/* 🔗 Profile Link */
+/* Profile Link */
 .profile-link {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 20px;
   background: #4f46e5;
   color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .profile-link:hover {
   background: #3730a3;
 }
 
-/* 📌 Footer */
+/* Footer */
 .footer {
-  margin-top: 20px;
-  color: white;
+  margin-top: 25px;
+  color: #6b7280;
   font-size: 0.85rem;
-  opacity: 0.85;
 }
 
-/* 📱 Mobile Responsiveness */
-@media (max-width: 768px) {
-  .title {
-    font-size: 1.8rem;
-  }
-
+/* Responsive Tweaks */
+@media (min-width: 600px) {
   .search-box {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row; /* Row only on bigger screens */
   }
 
-  .search-box input,
   .search-box button {
-    width: 100%;
+    width: auto;
+    min-width: 120px;
   }
 
   .profile-card {
-    flex-direction: column;
-    text-align: center;
+    display: flex;
     align-items: center;
+    text-align: left;
+    gap: 20px;
   }
 
   .profile-card img {
-    margin-bottom: 12px;
-  }
-
-  .stats {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .profile-card img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .stats span {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-  }
-
-  .profile-link {
-    width: 100%;
+    margin-bottom: 0;
   }
 }
