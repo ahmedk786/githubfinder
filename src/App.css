@@ -2,11 +2,12 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899);
+
+  /* ✅ Center content even on mobile */
+  height: 100dvh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  color: #333;
   text-align: center;
 }
 
@@ -15,7 +16,8 @@ body {
   max-width: 700px;
   padding: 20px;
   text-align: center;
-  margin: auto; /* keeps it centered */
+
+  /* ✅ Keep content centered inside */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +35,7 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ✅ stacks properly on small screens */
   width: 100%;
 }
 
@@ -51,7 +53,7 @@ body {
 .search-box button {
   padding: 12px 20px;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 10px; /* ✅ for mobile stacking */
   background: #4f46e5;
   border: none;
   border-radius: 10px;
@@ -81,7 +83,7 @@ body {
   margin: 0 auto;
   max-width: 600px;
   text-align: left;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ✅ adjusts for mobile */
   justify-content: center;
 }
 
