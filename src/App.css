@@ -7,6 +7,7 @@ body {
   align-items: center;
   min-height: 100vh;
   color: #333;
+  text-align: center;
 }
 
 .container {
@@ -14,6 +15,11 @@ body {
   max-width: 700px;
   padding: 20px;
   text-align: center;
+  margin: auto; /* keeps it centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -27,12 +33,14 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  flex-wrap: wrap; /* important for mobile */
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .search-box input {
   flex: 1;
   max-width: 400px;
+  width: 100%;
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -43,7 +51,7 @@ body {
 .search-box button {
   padding: 12px 20px;
   margin-left: 10px;
-  margin-top: 10px; /* for mobile stacking */
+  margin-top: 10px;
   background: #4f46e5;
   border: none;
   border-radius: 10px;
@@ -73,7 +81,8 @@ body {
   margin: 0 auto;
   max-width: 600px;
   text-align: left;
-  flex-wrap: wrap; /* mobile adjustment */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .profile-card img {
@@ -98,6 +107,7 @@ body {
   gap: 15px;
   margin-top: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stats span {
