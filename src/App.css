@@ -1,145 +1,169 @@
+/* 🌈 Global styles */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899);
-
-  /* ✅ Center content even on mobile */
-  height: 100dvh; 
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100dvh; /* ✅ works on mobile too */
+  color: #333;
   text-align: center;
+  padding: 15px;
 }
 
+/* 📦 Container */
 .container {
   width: 100%;
   max-width: 700px;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
-
-  /* ✅ Keep content centered inside */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* 🏷️ Title */
 .title {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  color: white;
+  color: #fff;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
+/* 🔍 Search Box */
 .search-box {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  flex-wrap: wrap; /* ✅ stacks properly on small screens */
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .search-box input {
   flex: 1;
-  max-width: 400px;
-  width: 100%;
-  padding: 12px;
+  min-width: 200px;
+  max-width: 350px;
+  padding: 12px 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   outline: none;
   font-size: 1rem;
+  background: #f9fafb;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-box button {
-  padding: 12px 20px;
-  margin-left: 10px;
-  margin-top: 10px; /* ✅ for mobile stacking */
-  background: #4f46e5;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .search-box button:hover {
-  background: #3730a3;
+  background: linear-gradient(135deg, #3730a3, #5b21b6);
+  transform: scale(1.05);
 }
 
+/* ❌ Error Message */
 .error {
   color: #f87171;
   font-weight: bold;
+  margin-top: 10px;
 }
 
+/* 🪪 Profile Card */
 .profile-card {
   background: white;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
   display: flex;
+  flex-direction: row;
   gap: 20px;
   align-items: center;
   margin: 0 auto;
   max-width: 600px;
   text-align: left;
-  flex-wrap: wrap; /* ✅ adjusts for mobile */
-  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* 👤 Profile Image */
 .profile-card img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   border: 4px solid #4f46e5;
+  object-fit: cover;
 }
 
+/* 📝 Profile Info */
 .username {
-  color: #6366f1;
-  font-weight: bold;
+  color: #4f46e5;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .bio {
   margin: 10px 0;
   color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
+/* 📊 Stats */
 .stats {
   display: flex;
   gap: 15px;
   margin-top: 10px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .stats span {
   background: #eef2ff;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #4f46e5;
+  box-shadow: 0 2px 5px rgba(99, 102, 241, 0.2);
 }
 
+/* 🔗 Profile Link */
 .profile-link {
   display: inline-block;
   margin-top: 15px;
-  background: #4f46e5;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 12px;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .profile-link:hover {
-  background: #3730a3;
+  background: linear-gradient(135deg, #3730a3, #5b21b6);
+  transform: scale(1.05);
 }
 
+/* 📌 Footer */
 .footer {
   margin-top: 30px;
   color: white;
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* 📱 Mobile Responsiveness */
@@ -150,21 +174,18 @@ body {
 
   .search-box {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
-  .search-box input {
-    max-width: 100%;
-  }
-
+  .search-box input,
   .search-box button {
     width: 100%;
-    margin-left: 0;
   }
 
   .profile-card {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .profile-card img {
@@ -188,11 +209,10 @@ body {
 
   .stats span {
     font-size: 0.8rem;
-    padding: 5px 10px;
+    padding: 5px 12px;
   }
 
   .profile-link {
     width: 100%;
-    text-align: center;
   }
 }
